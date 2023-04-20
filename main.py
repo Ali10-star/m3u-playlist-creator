@@ -111,7 +111,7 @@ doesnt_contain_radio.place(x=100, y=210)
 
 # ----------------------------- HELP BUTTON ------------------------------------------
 def display_help_dialog() -> None:
-    CTkMessagebox(title='Help', message=HELP_MESSAGE, option_1="OK")
+    msg_box.showinfo(title="Help", message=HELP_MESSAGE)
 
 
 help_btn = ctk.CTkButton(master=window, text='HELP', command=display_help_dialog)
@@ -132,8 +132,7 @@ def create_playlist_handler() -> None:
             playlist.INCLUDE = False
     found_count, playlist_path = playlist.parse_folder(FILTER)
     playlist.create_playlist()
-    CTkMessagebox(title='Done', icon='check', message=get_result(found_count, playlist_path), option_1="OK")
-    # msg_box.showinfo(title="Done", message=get_result(found_count, playlist_path))
+    msg_box.showinfo(title="Done", message=get_result(found_count, playlist_path))
 
 
 create_btn = ctk.CTkButton(master=window, text='Create Playlist!',
